@@ -54,7 +54,7 @@ const Messages = [
 
 export default function MessageScreen({navigation}) {
   return (
-      <View className='flex-1 justify-center items-center bg-slate-100'
+      <View className='flex-1 justify-center items-center bg-white'
       >
         <FlatList
           data={Messages}
@@ -68,10 +68,13 @@ export default function MessageScreen({navigation}) {
             >
               <View className='flex-row justify-between'
               >
-                <View  className='py-[15px]'>
-                  <Image className='w-[50px] h-[50px] rounded-[25px]'
+                <View  className='my-[15px]'>
+                  <View className='w-[55px] h-[55px] rounded-full  border-[#0D1B2A] border-[3px]'>
+                  <Image  className='w-[50px] h-[50px] rounded-full'
                     source={item.userImg}
                   />
+                  </View>
+                  
                 </View>
                 <View className='flex-col justify-center p-[15px] pl-[0px] ml-[10px] w-[300px] border-b-[1px] border-b-[#ccc]'
                  

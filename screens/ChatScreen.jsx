@@ -1,7 +1,6 @@
 import React, {useState, useEffect, useCallback} from 'react';
 import {View} from 'react-native';
 import {Bubble, GiftedChat, Send} from 'react-native-gifted-chat';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 const ChatScreen = () => {
@@ -44,13 +43,14 @@ const ChatScreen = () => {
   const renderSend = (props) => {
     return (
       <Send {...props}>
-        <View>
-          <MaterialCommunityIcons
-            name="send-circle"
-            style={{marginBottom: 5, marginRight: 5}}
-            size={32}
-            color="#c23d98"
-          />
+        <View className='my-1'>
+          <View className='bg-[#1B263B] rounded-full p-2  flex justify-center'>
+          <FontAwesome 
+            name="send"
+            style={{marginBottom: 5, marginRight: 5, padding:1}}
+            size={14}
+            color="#ffffff"
+          /></View>
         </View>
       </Send>
     );
@@ -62,13 +62,19 @@ const ChatScreen = () => {
         {...props}
         wrapperStyle={{
           right: {
-            backgroundColor: '#c23d98',
+            backgroundColor: '#415A77',
           },
+          left:{
+            backgroundColor:'#E0E1DD',
+          }
         }}
         textStyle={{
           right: {
-            color: '#fff',
+            color: '#E0E1DD',
           },
+          left:{
+            color:'#000'
+          }
         }}
       />
     );
@@ -81,7 +87,7 @@ const ChatScreen = () => {
   }
 
   return (
-    <GiftedChat
+    <GiftedChat className='bg-white'
       messages={messages}
       onSend={(messages) => onSend(messages)}
       user={{

@@ -67,3 +67,55 @@ export const users = [
     }
   ]
   
+  export const apartments= [
+    {
+        id: 1,
+        name: "Luciana Julia",
+        location: "Portland illinois",
+        apartmentName:'',
+        Rent:'1500$',
+        userImage: require("../assets/users/user-1.jpg")
+    }, 
+    {
+        id: 2,
+        name: "William Ida",
+        location: "Portland illinois",
+        image: require("../assets/users/user-2.jpg")
+    },
+    {
+        id: 3,
+        name: "Tracy Fradera",
+        location: "Portland illinois",
+        image: require("../assets/users/user-3.jpg")
+    },
+    {
+        id: 4,
+        name: "Doreatha Grave",
+        location: "Portland illinois",
+        image: require("../assets/users/user-4.jpg")
+    },
+    {
+        id: 5,
+        name: "Jacquetta Bobalik",
+        location: "Portland illinois",
+        image: require("../assets/users/user-5.jpg")
+    },
+    {
+        id: 6,
+        name: "Velia Kwasniak",
+        location: "Portland illinois",
+        image: require("../assets/users/user-6.jpg")
+    },
+    {
+        id: 7,
+        name: "Karisa Delorm",
+        location: "Portland illinois",
+        image: require("../assets/users/user-7.jpg")
+    },
+    {
+        id: 8,
+        name: "Cecil Agudelo",
+        location: "Portland illinois",
+        image: require("../assets/users/user-8.jpg")
+    }
+  ]
