@@ -11,14 +11,14 @@ const Footer = ({ handleChoice }) => {
   return (
     <View
       style={{
-        marginTop: 20,
-        position: "absolute",
-        bottom: 10,
+        marginBottom:0,
+        position: "fixed",
+        bottom:-640,
         width: 240,
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
-        zIndex: -99999,
+        zIndex:9,
       }}
     >
       <Button

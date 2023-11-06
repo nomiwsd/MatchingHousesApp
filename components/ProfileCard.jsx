@@ -4,7 +4,7 @@ const { width , height } = Dimensions.get("screen");
 import { Fragment, useCallback } from "react";
 import Choice from "./Choice";
 
-const Card = ({ name, age, location, distance, image, isFirst, swipe, titlSign, ...rest })=>{
+const ProfileCard = ({ name, age, location, distance, image, isFirst, swipe, titlSign, ...rest })=>{
 
     // Calculate the rotation of the card based on swipe gesture
     const rotate = Animated.multiply(swipe.x,titlSign).interpolate({
@@ -126,4 +126,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default Card
+export default ProfileCard

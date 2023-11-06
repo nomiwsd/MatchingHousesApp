@@ -7,15 +7,66 @@ import Entypo from "react-native-vector-icons/Entypo";
 import ProfileScreen from "../screens/ProfileScreen";
 import MessageScreen from "../screens/MessageScreen";
 import MapScreen from "../screens/MapScreen";
-import MatchingScreen from "../screens/MatchingScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
 import ChatScreen from "../screens/ChatScreen";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import ApartmentCardScreen from "../screens/ApartmentCardScreen";
+import UserProfileCardScreen from "../screens/UserProfileCardScreen";
+import MatchingScreen from "../screens/MatchingScreen";
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
 const number = 36;
+
+const MatchingStack = ({ navigation }) => (
+  <Stack.Navigator>
+    <Stack.Screen
+      name="Matching"
+      component={MatchingScreen}
+      options={{
+        headerTitleStyle: {
+          color: "#FFF",
+        },
+        headerStyle: { backgroundColor: "#1B263B" },
+        headerTitleAlign: "left",
+        headerShadowVisible: false,
+      }}
+    />
+    <Stack.Screen
+      name="UserCard"
+      component={UserProfileCardScreen}
+      options={({ route }) => ({
+        headerStyle: {
+          backgroundColor: "#1B263B",
+        },
+        headerTintColor: "#fff",
+        headerTitleStyle: {
+          color: "#fff",
+        },
+        headerTitleAlign: "center",
+        title: "UserLists",
+        headerBackTitleVisible: false,
+      })}
+    />
+    <Stack.Screen
+      name="Apartments"
+      component={ApartmentCardScreen}
+      options={({ route }) => ({
+        headerStyle: {
+          backgroundColor: "#1B263B",
+        },
+        headerTintColor: "#fff",
+        headerTitleStyle: {
+          color: "#fff",
+        },
+        headerTitleAlign: "center",
+        title: "Apartments List",
+        headerBackTitleVisible: false,
+      })}
+    />
+  </Stack.Navigator>
+);
 const MessageStack = ({ navigation }) => (
   <Stack.Navigator>
     <Stack.Screen
@@ -27,7 +78,7 @@ const MessageStack = ({ navigation }) => (
         },
         headerStyle: { backgroundColor: "#ffffff" },
         headerTitleAlign: "left",
-        headerShadowVisible:false
+        headerShadowVisible: false,
       }}
     />
     <Stack.Screen
@@ -41,7 +92,7 @@ const MessageStack = ({ navigation }) => (
         headerTitleStyle: {
           color: "#fff",
         },
-        headerTitleAlign:"center",
+        headerTitleAlign: "center",
         title: route.params.userName,
         headerBackTitleVisible: false,
       })}
@@ -81,22 +132,20 @@ export default function AppNavigation() {
             },
             headerStyle: { backgroundColor: "#1b263b" },
             headerTitleAlign: "center",
-            tabBarLabel: "Map",
-            // tabBarVisible: route.state && route.state.index === 0,
             tabBarIcon: ({ color }) => (
               <FontAwesome5 name="map-marker-alt" color={color} size={number} />
             ),
           })}
         />
         <Tab.Screen
-          name="Matching"
-          component={MatchingScreen}
+          name="MatchingProfiles"
+          component={MatchingStack}
           options={({ route }) => ({
             headerShown: false,
             headerTitleStyle: {
               color: "#fbeaf3",
             },
-            headerStyle: { backgroundColor: "#d46daf" },
+            headerStyle: { backgroundColor: "#1B263B" },
             headerTitleAlign: "left",
             tabBarIcon: ({ color }) => (
               <Entypo
@@ -125,7 +174,7 @@ export default function AppNavigation() {
             headerTitleStyle: {
               color: "#fbeaf3",
             },
-            headerStyle: { backgroundColor: "#d46daf" },
+            headerStyle: { backgroundColor: "#1B263B" },
             headerTitleAlign: "center",
             tabBarIcon: ({ color }) => (
               <IonIcons
